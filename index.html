@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All Season Services – Professional landscaping, lawn care, and seasonal services in State College, PA. Call (814) 238-8338 for a free quote.">
+<meta name="keywords" content="Landscaping State College PA, Lawn care State College, Landscaper near me, yard cleanup State College, snow removal State College PA">
+<title>All Season Services | Landscaping State College PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #1a3a1f;
+    --green-mid: #2d6a35;
+    --green-bright: #4a9e54;
+    --green-light: #a8d5ae;
+    --earth: #8b6f47;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --text: #1a2318;
+    --accent: #e8c547;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: rgba(26,58,31,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: var(--green-bright);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .nav-logo-text span { color: var(--green-light); font-size: 0.7rem; display: block; font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .nav-links a:hover { color: var(--green-light); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--green-dark) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: #f5d25a !important; transform: translateY(-1px); }
+
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
+
+  /* ── SECTIONS ── */
+  section { display: none; }
+  section.active { display: block; }
+
+  /* ── HERO ── */
+  #home { display: none; }
+  #home.active { display: block; }
+
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d2210 0%, #1a3a1f 40%, #2d6a35 100%);
+    position: relative;
+    display: flex; align-items: center;
+    padding: 120px 5% 80px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+    opacity: 0.18;
+  }
+
+  /* Decorative circles */
+  .hero::after {
+    content: '';
+    position: absolute; right: -100px; top: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 2px solid rgba(74,158,84,0.2);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 640px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(74,158,84,0.25);
+    border: 1px solid rgba(74,158,84,0.5);
+    color: var(--green-light);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--green-light);
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--green-bright);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: #3d8f47; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  .hero-stats {
+    position: relative; z-index: 2;
+    display: flex; gap: 40px; margin-top: 60px;
+    flex-wrap: wrap;
+  }
+  .stat { color: white; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--green-light);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+  /* ── SECTION HEADERS ── */
+  .section-wrap { padding: 90px 5%; }
+  .section-wrap.alt { background: var(--cream); }
+
+  .section-tag {
+    display: inline-block;
+    color: var(--green-mid);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  .section-header { margin-bottom: 52px; }
+
+  /* ── SERVICES CARDS ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px 28px;
+    border: 1px solid rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-mid), var(--green-bright));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--cream);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .why-visual {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    border-radius: 16px;
+    padding: 48px 36px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual::after {
+    content: '🌿';
+    position: absolute; right: -20px; bottom: -20px;
+    font-size: 120px; opacity: 0.1;
+  }
+
+  .why-rating {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stars { font-size: 1.4rem; margin: 8px 0; letter-spacing: 3px; }
+  .why-visual p { opacity: 0.8; margin-top: 12px; font-size: 0.95rem; }
+
+  .why-points { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .why-point {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .why-point:hover { transform: translateX(4px); }
+  .why-point-icon {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: var(--green-dark);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .why-point-text h4 { font-size: 1rem; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; }
+  .why-point-text p { font-size: 0.87rem; color: var(--gray); line-height: 1.5; }
+
+  /* ── REVIEWS ── */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+  }
+  .review-card:hover { transform: translateY(-3px); }
+  .review-stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-text { color: #374151; font-size: 0.93rem; line-height: 1.65; margin-bottom: 20px; font-style: italic; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--green-dark);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+  }
+  .review-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+  .review-meta { font-size: 0.78rem; color: var(--gray); }
+
+  /* ── GOOGLE BADGE ── */
+  .google-badge {
+    display: flex; align-items: center; gap: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 24px 32px;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 48px;
+    width: fit-content;
+  }
+  .g-rating { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--green-dark); line-height: 1; }
+  .g-label { font-size: 0.85rem; color: var(--gray); }
+  .g-stars { color: #f59e0b; font-size: 1.3rem; }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+  .about-img {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-bright) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 80px;
+    position: relative;
+  }
+  .about-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80') center/cover;
+    opacity: 0.5;
+  }
+
+  .about-content p {
+    color: var(--gray);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .about-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+  .pill {
+    background: var(--cream);
+    color: var(--green-dark);
+    border: 1px solid var(--green-light);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  /* ── SERVICE AREA ── */
+  .area-chips { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .area-chip {
+    background: var(--green-dark);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.87rem;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+  .contact-block {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--green-dark);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .contact-block h4 { font-weight: 600; font-size: 0.9rem; color: var(--green-dark); margin-bottom: 4px; }
+  .contact-block p, .contact-block a { color: var(--gray); font-size: 0.9rem; text-decoration: none; line-height: 1.5; }
+  .contact-block a:hover { color: var(--green-mid); }
+
+  .call-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--green-bright);
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    text-align: center;
+  }
+  .call-btn:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+  .map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 220px;
+    background: #e5e7eb;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .map-container iframe { width: 100%; height: 100%; border: none; }
+
+  /* ── FORM ── */
+  .quote-form {
+    background: white;
+    border-radius: 14px;
+    padding: 36px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .quote-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--green-dark);
+    margin-bottom: 24px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+    background: #fafafa;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--green-bright);
+    background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--green-dark);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 6px;
+  }
+  .form-submit:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px;
+  }
+  .form-success .check { font-size: 3rem; }
+  .form-success h4 { font-size: 1.2rem; color: var(--green-dark); margin: 12px 0 8px; font-family: 'Playfair Display', serif; }
+  .form-success p { color: var(--gray); font-size: 0.9rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-dark);
+    color: white;
+    padding: 60px 5% 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; margin-top: 14px; max-width: 280px; }
+
+  .footer-col h4 {
+    font-weight: 600;
+    font-size: 0.87rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { color: rgba(255,255,255,0.45); font-size: 0.82rem; }
+
+  /* ── FLOATING CALL BTN ── */
+  .float-call {
+    position: fixed;
+    bottom: 24px; right: 24px; z-index: 998;
+    background: var(--green-bright);
+    color: white;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 20px rgba(45,106,53,0.5);
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    animation: pulse 2.5s infinite;
+  }
+  .float-call:hover { transform: scale(1.1); background: var(--green-mid); animation: none; }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(45,106,53,0.5); }
+    50% { box-shadow: 0 4px 32px rgba(45,106,53,0.8), 0 0 0 10px rgba(74,158,84,0.15); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 68px; left: 0; right: 0;
+      background: var(--green-dark);
+      padding: 20px 5%;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hamburger { display: flex; }
+    .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; }
+    .google-badge { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" onclick="showSection('home')">
+    <div class="nav-logo-icon">🌿</div>
+    <div class="nav-logo-text">All Season Services<span>State College, PA</span></div>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a onclick="showSection('home')">Home</a></li>
+    <li><a onclick="showSection('services')">Services</a></li>
+    <li><a onclick="showSection('about')">About</a></li>
+    <li><a onclick="showSection('reviews')">Reviews</a></li>
+    <li><a onclick="showSection('contact')" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<section id="home" class="active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div style="width:100%">
+      <div class="hero-content">
+        <div class="hero-badge">⭐ 5.0 Stars on Google Reviews</div>
+        <h1>Professional Landscaping Services in <em>State College, PA</em></h1>
+        <p>Reliable lawn care, landscaping, and seasonal services for homes and businesses across Centre County.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="showSection('contact')">🌿 Get a Free Quote</button>
+          <a class="btn-secondary" href="tel:8142388338">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">5.0★</div><div class="stat-label">Google Rating</div></div>
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Services Offered</div></div>
+        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Areas Served</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Services Overview -->
+  <div class="section-wrap alt">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Full-Service Landscaping<br>You Can Count On</h2>
+      <p class="section-sub">From weekly lawn mowing to full-season maintenance — we handle the yard so you don't have to.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Lawn Mowing</h3>
+        <p>Regular, reliable mowing to keep your lawn looking sharp all season long.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌳</div>
+        <h3>Landscaping Design</h3>
+        <p>Transform your outdoor space with custom planting plans and beautiful landscape layouts.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🍂</div>
+        <h3>Yard Cleanup</h3>
+        <p>Seasonal cleanups to keep your property neat — spring prep, fall leaf removal, and more.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🪵</div>
+        <h3>Mulching</h3>
+        <p>Fresh mulch installation to protect your garden beds and give them a polished, finished look.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗓️</div>
+        <h3>Seasonal Maintenance</h3>
+        <p>Year-round care plans to keep your property in top shape through every season.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>Snow Removal</h3>
+        <p>Reliable snow and ice removal so your driveways, walks, and lots stay safe all winter.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <button class="btn-primary" onclick="showSection('services')">View All Services →</button>
+    </div>
+  </div>
+
+  <!-- Why Choose Us -->
+  <div class="section-wrap">
+    <div class="why-grid">
+      <div class="why-visual">
+        <p style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.7;margin-bottom:12px;">Google Reviews</p>
+        <div class="why-rating">5.0</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Consistently rated 5 stars by homeowners and businesses across State College.</p>
+      </div>
+      <ul class="why-points">
+        <li class="why-point">
+          <div class="why-point-icon">📍</div>
+          <div class="why-point-text">
+            <h4>Locally Rooted</h4>
+            <p>We're based right here in State College — we know this area and our customers personally.</p>
+          </div>
+        </li>
+        <li class="why-point">
+          <div class="why-point-icon">✅</div>
+          <div class="why-point-text">
+            <h4>Dependable & On Time</h4>
+            <p>When we say we'll be there, we show up. Your time matters to us.</p>
+          </div>
+        </li>
+        <li class="why-point">
+          <div class="why-point-icon">💬</div>
+          <div class="why-point-text">
+            <h4>Easy to Reach</h4>
+            <p>Call or text directly — no call centers, no runaround. Real answers, fast.</p>
+          </div>
+        </li>
+        <li class="why-point">
+          <div class="why-point-icon">🌤️</div>
+          <div class="why-point-text">
+            <h4>All-Season Coverage</h4>
+            <p>We handle your property through spring, summer, fall, and winter.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Review Highlight -->
+  <div class="section-wrap alt">
+    <div class="section-header">
+      <span class="section-tag">Customer Review</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div style="max-width:680px; background:white; border-radius:14px; padding:36px; border:1px solid rgba(0,0,0,0.07); box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+      <div style="font-size:1.3rem;color:#f59e0b;letter-spacing:3px;margin-bottom:16px;">⭐⭐⭐⭐⭐</div>
+      <p style="font-size:1.05rem;line-height:1.75;color:#374151;font-style:italic;margin-bottom:20px;">"All Season Services transformed our yard completely. They were professional, punctual, and the results exceeded our expectations. We use them year-round and couldn't be happier!"</p>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:46px;height:46px;border-radius:50%;background:var(--green-dark);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;">SK</div>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem;">Sarah K.</div>
+          <div style="font-size:0.8rem;color:var(--gray);">State College, PA · Google Review</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <button class="btn-primary" onclick="showSection('reviews')">Read All Reviews →</button>
+    </div>
+  </div>
+
+  <!-- Service Area -->
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-tag">Coverage</span>
+      <h2 class="section-title">Proudly Serving Centre County</h2>
+      <p class="section-sub">Based in State College and serving the surrounding communities throughout the region.</p>
+    </div>
+    <div class="area-chips">
+      <span class="area-chip">📍 State College</span>
+      <span class="area-chip">📍 Bellefonte</span>
+      <span class="area-chip">📍 Boalsburg</span>
+      <span class="area-chip">📍 Lemont</span>
+      <span class="area-chip">📍 Port Matilda</span>
+      <span class="area-chip">📍 Milesburg</span>
+      <span class="area-chip">📍 Philipsburg</span>
+      <span class="area-chip">📍 Centre County & Surrounding Areas</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div style="background:var(--green-dark);padding:80px 5% 60px;margin-top:68px;">
+    <span class="section-tag" style="color:var(--green-light)">What We Offer</span>
+    <h1 class="section-title" style="color:white">Our Services</h1>
+    <p class="section-sub" style="color:rgba(255,255,255,0.7)">Professional lawn care and landscaping services tailored for State College homes and businesses.</p>
+  </div>
+
+  <div class="section-wrap alt">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Lawn Mowing</h3>
+        <p>Keep your lawn looking its best with our regular mowing service. We offer flexible weekly and bi-weekly schedules, trimming around edges and obstacles for a clean, well-kept finish every visit.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌳</div>
+        <h3>Landscaping Design</h3>
+        <p>Whether you want a low-maintenance front yard or a full backyard transformation, we work with you to design and install beautiful, functional outdoor spaces that match your style and budget.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🍂</div>
+        <h3>Yard Cleanup</h3>
+        <p>From spring startup cleanups to fall leaf removal, we prep and restore your yard between seasons — clearing debris, hauling waste, and getting your property ready for what's next.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🪵</div>
+        <h3>Mulching</h3>
+        <p>We source and install quality mulch in your garden beds and around trees to suppress weeds, retain moisture, and give your landscaping a crisp, professional appearance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🗓️</div>
+        <h3>Seasonal Maintenance</h3>
+        <p>Take the guesswork out of yard care with a seasonal maintenance plan. We handle fertilization, edging, trimming, and general upkeep through every season so your property always looks great.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>Snow Removal</h3>
+        <p>Don't let a Pennsylvania winter slow you down. We offer residential and commercial snow plowing, shoveling, and ice treatment to keep your driveways, walkways, and parking areas safe and accessible.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-wrap" style="text-align:center; background:var(--green-dark);">
+    <h2 style="font-family:'Playfair Display',serif;color:white;font-size:2rem;margin-bottom:16px;">Ready to Get Started?</h2>
+    <p style="color:rgba(255,255,255,0.7);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">Contact us today for a free, no-obligation quote on any of our services.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="showSection('contact')">Request a Free Quote</button>
+      <a class="btn-secondary" href="tel:8142388338">📞 (814) 238-8338</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div style="background:var(--green-dark);padding:80px 5% 60px;margin-top:68px;">
+    <span class="section-tag" style="color:var(--green-light)">Our Story</span>
+    <h1 class="section-title" style="color:white">About All Season Services</h1>
+  </div>
+
+  <div class="section-wrap alt">
+    <div class="about-grid">
+      <div class="about-img"></div>
+      <div class="about-content">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title" style="margin-bottom:24px;">Built on Hard Work<br>& Local Pride</h2>
+        <p>All Season Services was founded right here in State College with one simple goal: to give homeowners and businesses a lawn care company they can truly count on. We're not a franchise or a national chain — we're your neighbors, and this community is our home.</p>
+        <p>We built this business on reliability, quality craftsmanship, and treating every customer's property like our own. Whether it's a quick weekly mow or a full landscape overhaul, we bring the same level of care and attention to every single job.</p>
+        <p>Our team is experienced, fully equipped, and genuinely proud of the work we do. That's why we've earned a perfect 5-star rating from the clients who trust us year after year.</p>
+        <div class="about-pills">
+          <span class="pill">📍 State College Based</span>
+          <span class="pill">⭐ 5.0 Google Rating</span>
+          <span class="pill">🌤️ All-Season Service</span>
+          <span class="pill">🏘️ Residential & Commercial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-tag">Service Area</span>
+      <h2 class="section-title">Serving State College & Beyond</h2>
+      <p class="section-sub">We proudly serve homeowners and businesses throughout Centre County, Pennsylvania.</p>
+    </div>
+    <div class="area-chips">
+      <span class="area-chip">📍 State College</span>
+      <span class="area-chip">📍 Bellefonte</span>
+      <span class="area-chip">📍 Boalsburg</span>
+      <span class="area-chip">📍 Lemont</span>
+      <span class="area-chip">📍 Port Matilda</span>
+      <span class="area-chip">📍 Milesburg</span>
+      <span class="area-chip">📍 Philipsburg</span>
+      <span class="area-chip">📍 And surrounding areas</span>
+    </div>
+    <div style="margin-top:36px;">
+      <button class="btn-primary" onclick="showSection('contact')">Get a Free Quote →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REVIEWS ═══════════════ -->
+<section id="reviews">
+  <div style="background:var(--green-dark);padding:80px 5% 60px;margin-top:68px;">
+    <span class="section-tag" style="color:var(--green-light)">Customer Reviews</span>
+    <h1 class="section-title" style="color:white">What Our Customers Say</h1>
+    <p class="section-sub" style="color:rgba(255,255,255,0.7)">Don't just take our word for it — here's what our State College neighbors have to say.</p>
+  </div>
+
+  <div class="section-wrap alt">
+    <div class="google-badge">
+      <div>
+        <div class="g-rating">5.0</div>
+        <div class="g-stars">⭐⭐⭐⭐⭐</div>
+        <div class="g-label">Based on Google Reviews</div>
+      </div>
+      <div style="border-left:2px solid #e5e7eb;padding-left:24px;">
+        <div style="font-size:0.9rem;color:var(--gray);line-height:1.7;">Perfect 5-star rating<br>across all reviews.<br><strong style="color:var(--green-dark)">State College's top-rated<br>landscaper.</strong></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Absolutely love the work they did on my yard. Professional from start to finish. My lawn has never looked better and they were so easy to work with!"</p>
+        <div class="review-author">
+          <div class="review-avatar">SK</div>
+          <div><div class="review-name">Sarah K.</div><div class="review-meta">State College · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"These guys are the real deal. Showed up on time every single week, did a fantastic job trimming and edging. Highly recommend to anyone in the area."</p>
+        <div class="review-author">
+          <div class="review-avatar">TM</div>
+          <div><div class="review-name">Tom M.</div><div class="review-meta">Boalsburg · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Called for a fall cleanup and they did an incredible job raking, hauling, and getting everything ready for winter. Price was fair and the crew was great."</p>
+        <div class="review-author">
+          <div class="review-avatar">JL</div>
+          <div><div class="review-name">Jennifer L.</div><div class="review-meta">Bellefonte · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Used them for snow removal this past winter and they were fast, reliable, and my driveway was always clear before I needed to leave for work. Will use again!"</p>
+        <div class="review-author">
+          <div class="review-avatar">RB</div>
+          <div><div class="review-name">Ryan B.</div><div class="review-meta">State College · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Had them put in new mulch and do some landscaping design work. The transformation was amazing. My neighbors keep asking who did it!"</p>
+        <div class="review-author">
+          <div class="review-avatar">CW</div>
+          <div><div class="review-name">Carol W.</div><div class="review-meta">Lemont · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Best landscaping company I've worked with in State College. Responsive, skilled, and genuinely care about doing a good job. A+ service every time."</p>
+        <div class="review-author">
+          <div class="review-avatar">DH</div>
+          <div><div class="review-name">David H.</div><div class="review-meta">State College · Google Review</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <button class="btn-primary" onclick="showSection('contact')">Ready to Join Our Happy Customers? Get a Quote →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div style="background:var(--green-dark);padding:80px 5% 60px;margin-top:68px;">
+    <span class="section-tag" style="color:var(--green-light)">Get In Touch</span>
+    <h1 class="section-title" style="color:white">Request a Free Quote</h1>
+    <p class="section-sub" style="color:rgba(255,255,255,0.7)">Fill out the form below or give us a call. We'll get back to you quickly with a free, no-obligation estimate.</p>
+  </div>
+
+  <div class="section-wrap alt">
+    <div class="contact-grid">
+      <div class="contact-info">
+
+        <a href="tel:8142388338" class="call-btn">📞 Tap to Call: (814) 238-8338</a>
+
+        <div class="contact-block">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:8142388338">(814) 238-8338</a>
+          </div>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Address</h4>
+            <p>233 Orchard Rd<br>State College, PA 16801</p>
+          </div>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat: 8:00 AM – 4:00 PM</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.123456!2d-77.8622!3d40.7934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cea62bc3def8e9%3A0x5937ccb9b4de1ee5!2s233%20Orchard%20Rd%2C%20State%20College%2C%20PA%2016801!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- Quote Form -->
+      <div class="quote-form" id="quote-form">
+        <h3>🌿 Request a Free Quote</h3>
+        <div id="form-fields">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" placeholder="(814) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Lawn Mowing</option>
+              <option>Landscaping Design</option>
+              <option>Yard Cleanup</option>
+              <option>Mulching</option>
+              <option>Seasonal Maintenance</option>
+              <option>Snow Removal</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Address / Property Location</label>
+            <input type="text" placeholder="Your address in State College, PA">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your yard or what you need done..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">Send Request →</button>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="check">✅</div>
+          <h4>Request Sent!</h4>
+          <p>Thanks for reaching out. We'll contact you within 24 hours with your free quote.</p>
+          <p style="margin-top:12px;">Or call us directly: <a href="tel:8142388338" style="color:var(--green-mid);font-weight:600;">(814) 238-8338</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <div style="font-size:28px;">🌿</div>
+        <div style="font-family:'Playfair Display',serif;color:white;font-size:1.2rem;font-weight:700;">All Season Services</div>
+      </div>
+      <p>Professional landscaping and lawn care serving State College, PA and Centre County. Call us for a free quote today.</p>
+      <a href="tel:8142388338" style="display:inline-block;margin-top:16px;color:var(--green-light);font-weight:600;text-decoration:none;font-size:1.05rem;">(814) 238-8338</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a onclick="showSection('services')">Lawn Mowing</a></li>
+        <li><a onclick="showSection('services')">Landscaping Design</a></li>
+        <li><a onclick="showSection('services')">Yard Cleanup</a></li>
+        <li><a onclick="showSection('services')">Mulching</a></li>
+        <li><a onclick="showSection('services')">Snow Removal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a onclick="showSection('home')">Home</a></li>
+        <li><a onclick="showSection('about')">About Us</a></li>
+        <li><a onclick="showSection('reviews')">Reviews</a></li>
+        <li><a onclick="showSection('contact')">Get a Quote</a></li>
+      </ul>
+      <div style="margin-top:24px;">
+        <h4>Location</h4>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;margin-top:10px;line-height:1.6;">233 Orchard Rd<br>State College, PA 16801</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 All Season Services. All rights reserved. · State College, PA</p>
+    <p>Landscaping State College PA · Lawn Care State College · Landscaper Near Me</p>
+  </div>
+</footer>
+
+<!-- Floating Call Button (mobile) -->
+<a href="tel:8142388338" class="float-call" title="Call Now">📞</a>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // close mobile menu
+    document.getElementById('nav-links').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+
+  function submitForm() {
+    // Grab form values
+    const inputs = document.querySelectorAll('#form-fields input, #form-fields textarea, #form-fields select');
+    const firstName = inputs[0].value || '';
+    const lastName  = inputs[1].value || '';
+    const phone     = inputs[2].value || '';
+    const email     = inputs[3].value || '';
+    const service   = inputs[4].value || 'Not specified';
+    const address   = inputs[5].value || '';
+    const message   = inputs[6].value || '';
+
+    // Build the pre-filled SMS body
+    const smsBody = `New Quote Request from your website!%0A%0AName: ${encodeURIComponent(firstName + ' ' + lastName)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AService: ${encodeURIComponent(service)}%0AAddress: ${encodeURIComponent(address)}%0AMessage: ${encodeURIComponent(message)}`;
+
+    // Open the native SMS app pre-filled to the business number
+    window.location.href = `sms:+18142388338?body=${smsBody}`;
+
+    // Show success message
+    document.getElementById('form-fields').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // Highlight active nav link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active-link'));
+    });
+  });
+</script>
+</body>
+</html>
